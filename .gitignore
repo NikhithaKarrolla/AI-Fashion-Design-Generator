@@ -1,0 +1,8 @@
+venv/
+__pycache__/
+generated/
+model_files/
+*.pkl
+*.png
+dataset/product_images/
+.cache/
