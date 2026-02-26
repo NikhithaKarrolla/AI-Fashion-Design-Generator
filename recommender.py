@@ -2,13 +2,14 @@ from sklearn.neighbors import NearestNeighbors
 import pickle
 from price_filter import get_affordable_products
 
-features = pickle.load(open("model_files/features.pkl","rb"))
-images = pickle.load(open("model_files/images.pkl","rb"))
-
-model = NearestNeighbors(n_neighbors=10)
-model.fit(features)
-
 def recommend(generated_feature):
+
+    # Load inside function (NOT outside)
+    features = pickle.load(open("model_files/features.pkl","rb"))
+    images = pickle.load(open("model_files/images.pkl","rb"))
+
+    model = NearestNeighbors(n_neighbors=10)
+    model.fit(features)
 
     distances, indices = model.kneighbors([generated_feature])
 
