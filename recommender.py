@@ -4,7 +4,6 @@ from price_filter import get_affordable_products
 
 def recommend(generated_feature):
 
-    # Load inside function (NOT outside)
     features = pickle.load(open("model_files/features.pkl","rb"))
     images = pickle.load(open("model_files/images.pkl","rb"))
 
